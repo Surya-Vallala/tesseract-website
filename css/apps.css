@@ -1,0 +1,64 @@
+/* Apps page additions. Loads after style.css and reuses its variables. */
+.eyebrow{display:block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:#ff6b6b;margin-bottom:18px}
+.eyebrow.dark{color:var(--red)}
+
+.apps-hero{background:var(--ink);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
+.apps-hero::before,.apps-hero::after{content:"";position:absolute;width:64px;height:64px;border:4px solid var(--red)}
+.apps-hero::before{top:28px;left:28px;border-right:0;border-bottom:0}
+.apps-hero::after{bottom:28px;right:28px;border-left:0;border-top:0}
+.apps-hero .wrap{max-width:980px}
+.apps-hero h1{font-size:clamp(44px,7vw,96px);margin-bottom:26px}
+.apps-hero p{font-size:20px;color:#d6d2ca;max-width:720px;margin:0 0 36px}
+
+.why{background:var(--warm)}
+.why-head{max-width:760px;margin-bottom:40px}
+.why-head h2,.sec-head h2{font-size:clamp(34px,4.6vw,60px)}
+.why-cols{display:flex;flex-wrap:wrap;gap:40px 64px}
+.why-cols>div{flex:1 1 380px;min-width:0}
+.why-cols p{margin:0 0 18px;color:var(--grey);font-size:18px}
+.pillars{list-style:none;padding:0;margin:56px 0 0;display:flex;flex-wrap:wrap;gap:20px}
+.pillars li{flex:1 1 220px;min-width:0;background:#fff;border-top:3px solid var(--red);padding:26px 24px}
+.pillars h3{font-size:26px;margin-bottom:8px}
+.pillars p{margin:0;color:var(--grey);font-size:16px}
+
+.sec-head{margin-bottom:44px}
+.app-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.app-card{display:flex;gap:26px;padding:32px;background:#fff;border:1px solid var(--line);position:relative;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;color:var(--ink)}
+a.app-card:hover,a.app-card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.12);border-color:var(--ink)}
+.app-tile{flex:0 0 92px;width:92px;height:92px;position:relative;display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff}
+.app-tile::before,.app-tile::after{content:"";position:absolute;width:18px;height:18px;border:3px solid var(--red)}
+.app-tile::before{top:7px;left:7px;border-right:0;border-bottom:0}
+.app-tile::after{bottom:7px;right:7px;border-left:0;border-top:0}
+.app-tile b{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:44px;letter-spacing:.04em}
+.app-tile.icon{background:#fff;border:1px solid var(--line)}
+.app-tile.icon::before,.app-tile.icon::after{display:none}
+.app-tile.icon img{width:100%;height:100%;object-fit:contain}
+.app-body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.app-status{align-self:flex-start;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--ink);color:var(--ink)}
+.app-status.live{background:var(--red);border-color:var(--red);color:#fff}
+.app-status.soon{border-color:#9a958d;color:#5b5b5b}
+.app-name{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;text-transform:uppercase;letter-spacing:.03em}
+.app-tag{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.app-desc{color:var(--grey);font-size:16px;line-height:1.6}
+.app-cta{margin-top:8px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;border-bottom:2px solid var(--red);align-self:flex-start;padding-bottom:3px}
+.app-card.soon .app-cta{border-bottom-color:transparent;color:var(--grey)}
+.app-card.soon,.app-card.more{background:transparent;border-style:dashed}
+.app-card.more .app-tile{background:transparent;color:var(--ink);border:2px dashed #b9b4aa}
+.app-card.more .app-tile::before,.app-card.more .app-tile::after{display:none}
+
+@media (max-width:900px){
+  .app-grid{grid-template-columns:1fr}
+  .apps-hero{padding:64px 0 72px}
+}
+@media (max-width:600px){
+  .apps-hero{padding:72px 0 80px}
+  .apps-hero::before,.apps-hero::after{width:34px;height:34px;border-width:3px}
+  .apps-hero::before{top:16px;left:16px}
+  .apps-hero::after{bottom:16px;right:16px}
+  .apps-hero h1{font-size:clamp(38px,11vw,52px);line-height:1.02}
+  .apps-hero p{font-size:17px;line-height:1.6;margin-bottom:28px}
+  .apps-hero .btn,.apps-hero a.btn{display:block;text-align:center}
+}
+@media (max-width:520px){
+  .app-card{flex-direction:column;gap:18px;padding:24px}
+}
